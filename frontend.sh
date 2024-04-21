@@ -11,7 +11,7 @@ echo -e "\e[33mRemoving old app contente[0m"
 rm -rf /usr/share/nginx/html/*
 
 echo -e "\e[33mextract front end content\e[0m"
-curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip >/tmp/roboshop.log
+curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip >/tmp/roboshop.log 2>/tmp/error.log
 cd /usr/share/nginx/html
 unzip /tmp/frontend.zip >/tmp/roboshop.log
 # we need to copy config file
