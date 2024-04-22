@@ -1,3 +1,5 @@
+sudo su -
+set-hostname mongodb
 echo -e "\e[33m copy mongodb repo file\e[0m"
 cp /root/roboshop--shell/mongodb.repo /etc/yum.repos.d/mongo.repo &>> /tmp/roboshop.log
 

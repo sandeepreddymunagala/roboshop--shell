@@ -1,3 +1,5 @@
+sudo su -
+set-hostname catalogue
 echo -e "\e[33m disabling nodejs repos \e[0m"
 dnf module disable nodejs -y &>> /tmp/roboshop.log
 

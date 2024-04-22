@@ -1,3 +1,5 @@
+sudo su -
+set-hostname mysql
 echo -e "\e[33m disable mysql default version \e[0m"
 dnf module disable mysql -y &>> /tmp/roboshop.log
 

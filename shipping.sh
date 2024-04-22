@@ -1,3 +1,6 @@
+sudo su -
+set-hostname shipping
+
 echo -e "\e[33m install maven \e[0m"
 dnf install maven -y &>> /tmp/roboshop.log
 
