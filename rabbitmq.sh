@@ -1,5 +1,5 @@
 sudo su -
-set-hostname rabbitmq
+#set-hostname rabbitmq
 echo -e "\e[33m configure erlang repos \e[0m"
 curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash &>> /tmp/roboshop.log
 

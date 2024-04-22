@@ -1,5 +1,5 @@
 sudo su -
-set-hostname payment
+#set-hostname payment
 echo -e "\e[33m install python36 \e[0m"
 dnf install python36 gcc python3-devel -y &>> /tmp/roboshop.log
 

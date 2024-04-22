@@ -1,5 +1,5 @@
 sudo su -
-set-hostname dispatch
+#set-hostname dispatch
 echo -e "\e[33m install golang \e[0m"
 dnf install golang -y &>> /tmp/roboshop.log
 

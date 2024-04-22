@@ -1,5 +1,5 @@
 sudo su -
-set-hostname redis
+#set-hostname redis
 echo -e "\e[33m install redis repos \e[0m"
 dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y &>> /tmp/roboshop.log
 

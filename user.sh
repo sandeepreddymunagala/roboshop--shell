@@ -1,5 +1,5 @@
 sudo su -
-set-hostname user
+#set-hostname user
 echo -e "\e[33m disabling nodejs repos \e[0m"
 dnf module disable nodejs -y &>> /tmp/roboshop.log
 
