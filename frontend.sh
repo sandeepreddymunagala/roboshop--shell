@@ -1,5 +1,3 @@
-sudo su -
-#set-hostname frontend
 # installing nginx server for web frame
 echo -e "\e[33mInstalling nginx server\e[0m"
 dnf install nginx -y  &>> /tmp/roboshop.log
