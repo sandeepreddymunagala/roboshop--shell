@@ -14,7 +14,7 @@ cd /usr/share/nginx/html
 unzip /tmp/frontend.zip
 
 echo -e "\e[33m update frontend configuration\e[0m"
-cp /root/roboshop--shell/robo.conf /etc/nginx/default.d/roboshop.conf &>> /tmp/roboshop.log
+cp /root/roboshop--shell/roboshop.conf /etc/nginx/default.d/roboshop.conf &>> /tmp/roboshop.log
 
 echo -e "\e[33m restart nginx server\e[0m"
 systemctl enable nginx &>> /tmp/roboshop.log
