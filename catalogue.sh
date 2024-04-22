@@ -1,19 +1,40 @@
-echo -e "\e[33mInstalling nginx server\e[0m"
-dnf module disable nodejs -y
-dnf module enable nodejs:18 -y
-dnf install nodejs -y
-useradd roboshop
+echo -e "\e[33mconfiguring nodejs repose[0m"
+dnf module disable nodejs -y &>> /tmp/roboshop.log
+
+echo -e "\e[33mconfiguring nodejs repose[0m"
+dnf module enable nodejs:18 -y &>> /tmp/roboshop.log
+
+echo -e "\e[33m configuring nodejs repos \e[0m"
+dnf install nodejs -y &>> /tmp/roboshop.log
+
+echo -e "\e[33m add application user \e[0m"
+useradd roboshop &>> /tmp/roboshop.log
 rm -rf /app
 mkdir /app
-curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip
+
+echo -e "\e[33mc downloading application context \e[0m"
+curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip &>> /tmp/roboshop.log
 cd /app
-unzip /tmp/catalogue.zip
-cd /app
-npm install
-cp catalogue.service /etc/systemd/system/catalouge.service
-systemctl daemon-reload
-systemctl enable catalogue
-systemctl start catalogue
-cp mongodb.repo /etc/yum.repos.d/mongo.repo
-dnf install mongodb-org-shell -y
+
+echo -e "\e[33m extracting application context \e[0m"
+unzip /tmp/catalogue.zip &>> /tmp/roboshop.log
+
+echo -e "\e[33m install nodejs dependencies \e[0m"
+npm install &>> /tmp/roboshop.log
+
+echo -e "\e[33m update systemd service \e[0m"
+cp catalogue.service /etc/systemd/system/catalouge.service &>> /tmp/roboshop.log
+
+echo -e "\e[33m start catalogue service \e[0m"
+systemctl daemon-reload &>> /tmp/roboshop.log
+systemctl enable catalogue &>> /tmp/roboshop.log
+systemctl start catalogue &>> /tmp/roboshop.log
+
+echo -e "\e[33m copy mongodb repo file \e[0m"
+cp mongodb.repo /etc/yum.repos.d/mongo.repo &>> /tmp/roboshop.log
+
+echo -e "\e[33m install mongodb client \e[0m"
+dnf install mongodb-org-shell -y &>> /tmp/roboshop.log
+
+echo -e "\e[33m load schema \e[0m"
 mongo --host mongodb-dev.sandeepreddymunagala123.xyz </app/schema/catalogue.js
