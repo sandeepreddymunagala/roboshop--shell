@@ -135,7 +135,7 @@ app_presetup
 
 
 echo -e "\e[33m install golang dependencies \e[0m"
-go mod init ${comopnent} &>> ${log_file}
+go mod init ${comoponent} &>> ${log_file}
 stat_check $?
 echo 2
 go get &>> ${log_file}
