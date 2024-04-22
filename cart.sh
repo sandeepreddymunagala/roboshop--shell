@@ -6,7 +6,7 @@ dnf module enable nodejs:18 -y &>> /tmp/roboshop.log
 dnf install nodejs -y &>> /tmp/roboshop.log
 
 echo -e "\e[33m add application cart \e[0m"
-cartadd roboshop &>> /tmp/roboshop.log
+useradd roboshop &>> /tmp/roboshop.log
 rm -rf /app
 mkdir /app
 
