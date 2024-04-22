@@ -42,7 +42,7 @@ app_presetup() {
 
 systemd_setup() {
   echo -e "${color} Setup SystemD Service  ${nocolor}"
-  cp /home/centos/roboshop-shell/$component.service /etc/systemd/system/$component.service  &>>$log_file
+  cp /home/centos/roboshop--shell/$component.service /etc/systemd/system/$component.service  &>>$log_file
   sed -i -e "s/roboshop_app_password/$roboshop_app_password/"  /etc/systemd/system/$component.service
   stat_check $?
 
@@ -73,7 +73,7 @@ nodejs() {
 
 mongo_schema_setup() {
   echo -e "${color} Copy MongoDB Repo file ${nocolor}"
-  cp /home/centos/roboshop-shell/mongodb.repo /etc/yum.repos.d/mongodb.repo  &>>$log_file
+  cp /home/centos/roboshop--shell/mongodb.repo /etc/yum.repos.d/mongodb.repo  &>>$log_file
   stat_check $?
 
   echo -e "${color} Install MongoDB Client ${nocolor}"
@@ -81,7 +81,7 @@ mongo_schema_setup() {
   stat_check $?
 
   echo -e "${color} Load Schema ${nocolor}"
-  mongo --host mongodb-dev.devopsb73.store <${app_path}/schema/$component.js  &>>$log_file
+  mongo --host mongodb-dev.sandeepreddymunagala123.xyz <${app_path}/schema/$component.js  &>>$log_file
   stat_check $?
 }
 
@@ -91,7 +91,7 @@ mysql_schema_setup() {
   stat_check $?
 
   echo -e "${color} Load Schema ${nocolor}"
-  mysql -h mysql-dev.devopsb73.store -uroot -p${mysql_root_password} </app/schema/${component}.sql   &>>$log_file
+  mysql -h mysql-dev.sandeepreddymunagala123.xyz -uroot -p${mysql_root_password} </app/schema/${component}.sql   &>>$log_file
   stat_check $?
 }
 
