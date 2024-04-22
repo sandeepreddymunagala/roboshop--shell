@@ -18,7 +18,7 @@ echo -e "\e[33m install application dependencies \e[0m"
 pip3.6 install -r requirements.txt &>> /tmp/roboshop.log
 
 echo -e "\e[33m update systemd service \e[0m"
-cp payment.service /etc/systemd/system/payment.service &>> /tmp/roboshop.log
+cp /root/roboshop--shell/payment.service /etc/systemd/system/payment.service &>> /tmp/roboshop.log
 
 echo -e "\e[33m start payment service\e[0m"
 systemctl daemon-reload &>> /tmp/roboshop.log
