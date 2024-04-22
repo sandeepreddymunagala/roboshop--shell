@@ -24,6 +24,9 @@ dnf install mysql -y &>> /tmp/roboshop.log
 echo -e "\e[33m load schema \e[0m"
 mysql -h mysql-dev.sandeepreddymunagala123.xyz -uroot -pRoboShop@1 < /app/schema/shipping.sql &>> /tmp/roboshop.log
 
+echo -e "\e[33m setup systemd file \e[0m"
+cp /root/roboshop--shell/shipping.service /etc/systemd/system/shipping.service &>> /tmp/roboshop.log
+
 echo -e "\e[33m start shipping service \e[0m"
 systemctl daemon-reload &>> /tmp/roboshop.log
 systemctl enable shipping &>> /tmp/roboshop.log
