@@ -1,4 +1,4 @@
-echo -e "\e[33m configuring nodejs repos \e[0m"
+echo -e "\e[33m disabling nodejs repos \e[0m"
 dnf module disable nodejs -y &>> /tmp/roboshop.log
 
 echo -e "\e[33m configuring nodejs repos \e[0m"
@@ -12,7 +12,7 @@ useradd roboshop &>> /tmp/roboshop.log
 rm -rf /app
 mkdir /app
 
-echo -e "\e[33mc downloading application context \e[0m"
+echo -e "\e[33m downloading application context \e[0m"
 curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip &>> /tmp/roboshop.log
 cd /app
 
@@ -31,7 +31,7 @@ systemctl enable catalogue &>> /tmp/roboshop.log
 systemctl start catalogue &>> /tmp/roboshop.log
 
 echo -e "\e[33m copy mongodb repo file \e[0m"
-cp mongodb.repo /etc/yum.repos.d/mongo.repo &>> /tmp/roboshop.log
+cp /root/roboshop--shell/mongodb.repo /etc/yum.repos.d/mongo.repo &>> /tmp/roboshop.log
 
 echo -e "\e[33m install mongodb client \e[0m"
 dnf install mongodb-org-shell -y &>> /tmp/roboshop.log
