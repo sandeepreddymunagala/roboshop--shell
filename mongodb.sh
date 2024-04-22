@@ -1,5 +1,5 @@
 echo -e "\e[33m copy mongodb repo file\e[0m"
-cp mongo.repo /etc/yum.repos.d/mongo.repo &>> /tmp/roboshop.log
+cp /root/roboshop--shell/mongo.repo /etc/yum.repos.d/mongo.repo &>> /tmp/roboshop.log
 
 echo -e "\e[33m installing mongodb server\e[0m"
 dnf install mongodb-org -y &>> /tmp/roboshop.log
