@@ -1,10 +1,10 @@
-echo -e "\e[33mconfiguring nodejs repose[0m"
+echo -e "\e[33m disable nodejs repos \e[0m"
 dnf module disable nodejs -y &>> /tmp/roboshop.log
 
-echo -e "\e[33mconfiguring nodejs repose[0m"
+echo -e "\e[33m configuring nodejs repos \e[0m"
 dnf module enable nodejs:18 -y &>> /tmp/roboshop.log
 
-echo -e "\e[33m configuring nodejs repos \e[0m"
+echo -e "\e[33m install nodejs repos \e[0m"
 dnf install nodejs -y &>> /tmp/roboshop.log
 
 echo -e "\e[33m add application user \e[0m"
