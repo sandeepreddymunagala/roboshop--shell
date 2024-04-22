@@ -130,7 +130,7 @@ python() {
 golang(){
 echo -e "\e[33m install golang \e[0m"
 dnf install golang -y &>> ${log_file}
-
+stat_check $?
 app_presetup
 
 
@@ -138,6 +138,6 @@ echo -e "\e[33m install golang dependencies \e[0m"
 go mod init ${comopnent} &>> ${log_file}
 go get &>> ${log_file}
 go build &>> ${log_file}
-
+stat_check $?
 systemd_setup
 }

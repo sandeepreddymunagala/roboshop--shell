@@ -1,4 +1,4 @@
 source common.sh
-component = dispatch
+component=dispatch
 
 golang
