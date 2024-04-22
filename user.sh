@@ -23,7 +23,7 @@ echo -e "\e[33m install nodejs dependencies \e[0m"
 npm install &>> /tmp/roboshop.log
 
 echo -e "\e[33m update systemd service \e[0m"
-cp user.service /etc/systemd/system/catalouge.service &>> /tmp/roboshop.log
+cp /root/roboshop--shell/user.service /etc/systemd/system/user.service &>> /tmp/roboshop.log
 
 echo -e "\e[33m start user service \e[0m"
 systemctl daemon-reload &>> /tmp/roboshop.log
@@ -31,7 +31,7 @@ systemctl enable user &>> /tmp/roboshop.log
 systemctl start user &>> /tmp/roboshop.log
 
 echo -e "\e[33m copy mongodb repo file \e[0m"
-cp mongodb.repo /etc/yum.repos.d/mongo.repo &>> /tmp/roboshop.log
+cp /root/roboshop--shell/mongodb.repo /etc/yum.repos.d/mongo.repo &>> /tmp/roboshop.log
 
 echo -e "\e[33m install mongodb client \e[0m"
 dnf install mongodb-org-shell -y &>> /tmp/roboshop.log
