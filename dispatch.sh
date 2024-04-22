@@ -19,6 +19,8 @@ go mod init dispatch &>> /tmp/roboshop.log
 go get &>> /tmp/roboshop.log
 go build &>> /tmp/roboshop.log
 
+echo -e "\e[33m install golang dependencies \e[0m"
+cp /root/roboshop--shell/dispatch.service /etc/systemd/system/dispatch.service &>> /tmp/roboshop.log
 echo -e "\e[33m start dispatch service \e[0m"
 systemctl daemon-reload &>> /tmp/roboshop.log
 systemctl enable dispatch &>> /tmp/roboshop.log
